@@ -1,0 +1,1570 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the sync-repos tool, a DevOps utility for synchronizing files and repositories.
+">
+      
+      
+        <meta name="author" content="Supratim Neogi">
+      
+      
+        <link rel="canonical" href="http://192.168.1.100:8000/guide-bkp/">
+      
+      
+        <link rel="prev" href="../usage-bkp/">
+      
+      
+        <link rel="next" href="../maintenance-bkp/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>Guide - Sync-Repos Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sync-repos-script-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Sync-Repos Documentation" class="md-header__button md-logo" aria-label="Sync-Repos Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sync-Repos Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://bitbucket.org/supratimneogi007/syncmaster" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    syncmaster
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../installation/" class="md-tabs__link">
+        
+  
+    
+  
+  Installation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../usage-bkp/" class="md-tabs__link">
+        
+  
+    
+  
+  Usage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../maintenance-bkp/" class="md-tabs__link">
+        
+  
+    
+  
+  Maintenance
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../troubleshooting/" class="md-tabs__link">
+        
+  
+    
+  
+  Troubleshooting
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Sync-Repos Documentation" class="md-nav__button md-logo" aria-label="Sync-Repos Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sync-Repos Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://bitbucket.org/supratimneogi007/syncmaster" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    syncmaster
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage-bkp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Guide
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✨ Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✨ Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      📂 File Synchronization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-and-rollback" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Backup and Rollback
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Git Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Repository Tracking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprehensive-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Comprehensive Logging
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗂️ Directory Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Quick Start Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Quick Start Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Command Reference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Practical Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 Practical Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-syncing-between-two-git-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1: Syncing Between Two Git Repositories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-using-operation-ids-for-quick-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2: Using Operation IDs for Quick Access
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-rollback-after-a-failed-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 3: Rollback After a Failed Sync
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Advanced Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Advanced Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#working-with-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with Branches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository-tracking-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repository Tracking Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues and Solutions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔮 Future Enhancements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support-contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 Support &amp; Contribution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🤝 Support &amp; Contribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      📜 License
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintenance-bkp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✨ Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✨ Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      📂 File Synchronization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-and-rollback" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Backup and Rollback
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Git Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Repository Tracking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprehensive-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Comprehensive Logging
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗂️ Directory Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Quick Start Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Quick Start Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Command Reference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Practical Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 Practical Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-syncing-between-two-git-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1: Syncing Between Two Git Repositories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-using-operation-ids-for-quick-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2: Using Operation IDs for Quick Access
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-rollback-after-a-failed-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 3: Rollback After a Failed Sync
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Advanced Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Advanced Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#working-with-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with Branches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository-tracking-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repository Tracking Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues and Solutions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔮 Future Enhancements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support-contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 Support &amp; Contribution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🤝 Support &amp; Contribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      📜 License
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="sync-repos-script-documentation">Sync Repos Script Documentation<a class="headerlink" href="#sync-repos-script-documentation" title="Permanent link">&para;</a></h1>
+<h2 id="overview">📋 Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The <code>syncRepoV3_LTS.sh</code> script is a powerful tool designed to synchronize files between source and destination directories or Git repositories. It provides robust features for backup, rollback, and Git operations. After installation, you can run it from any directory using the <code>sync_repo</code> command.</p>
+<hr />
+<h2 id="features">✨ Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<h3 id="file-synchronization">📂 File Synchronization<a class="headerlink" href="#file-synchronization" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Seamlessly sync files between directories or Git repositories</li>
+<li>Support for both local paths and remote Git repositories</li>
+<li>Intelligent handling of Git branches</li>
+</ul>
+<h3 id="backup-and-rollback">🔄 Backup and Rollback<a class="headerlink" href="#backup-and-rollback" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Automatic Backups</strong>: Creates backups before any synchronization</li>
+<li><strong>Multiple Rollback Options</strong>:</li>
+<li><code>--rb</code>: Rollback to latest backup</li>
+<li><code>--rlp</code>: Rollback the last Git push</li>
+<li><code>--rtc</code>: Rollback to a specific Git commit</li>
+</ul>
+<h3 id="git-integration">🔧 Git Integration<a class="headerlink" href="#git-integration" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Pull latest changes from source repositories</li>
+<li>Commit and push changes to destination repositories</li>
+<li>Branch management and switching</li>
+</ul>
+<h3 id="repository-tracking">📊 Repository Tracking<a class="headerlink" href="#repository-tracking" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Track repositories with unique operation IDs</li>
+<li>Edit repository information with user-friendly interface</li>
+<li>View all tracked repositories in a formatted display</li>
+</ul>
+<h3 id="comprehensive-logging">📝 Comprehensive Logging<a class="headerlink" href="#comprehensive-logging" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Detailed JSON-based logs for all operations</li>
+<li>Logs organized by date for easy reference</li>
+<li>View logs directly from the command line</li>
+</ul>
+<hr />
+<h2 id="directory-structure">🗂️ Directory Structure<a class="headerlink" href="#directory-structure" title="Permanent link">&para;</a></h2>
+<p>The script creates the following directory structure:</p>
+<div class="codehilite"><pre><span></span><code>~/.sync_repo/
+├── BACKUP/          # Stores timestamped backup archives
+├── LOGS/            # Contains detailed operation logs
+│   └── DD_Month/    # Organized by date (e.g., 25_March)
+├── SYNC_DIR/
+│   ├── YYYY_MM_REPOS/  # Repositories organized by month
+│   │   └── DD/      # And day
+│   │       ├── source_DIR_XXXXXX/  # Source repositories
+│   │       └── dest_DIR_XXXXXX/    # Destination repositories
+│   └── repo_tracking.json  # Repository tracking information
+</code></pre></div>
+
+<hr />
+<h2 id="quick-start-guide">🚀 Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Permanent link">&para;</a></h2>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Install required dependencies</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>rsync<span class="w"> </span>jq<span class="w"> </span>tar
+
+<span class="c1"># Run the script directly</span>
+bash<span class="w"> </span>curl<span class="w"> </span>-L<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&lt;your-username&gt;:&lt;your-app-password&gt;&quot;</span><span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;https://api.bitbucket.org/2.0/repositories/supratimneogi007/syncmaster/downloads/sync-repos_2.7.3_all.deb&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>./sync-repos_2.7.3_all.deb
+</code></pre></div>
+
+<h3 id="basic-usage">Basic Usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Perform file synchronization</span>
+sync_repo<span class="w"> </span>--i
+
+<span class="c1"># Rollback to latest backup</span>
+sync_repo<span class="w"> </span>--rb
+
+<span class="c1"># Edit repository tracking information</span>
+sync_repo<span class="w"> </span>--edit-track
+</code></pre></div>
+
+<hr />
+<h2 id="command-reference">📚 Command Reference<a class="headerlink" href="#command-reference" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Alias</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--i</code></td>
+<td></td>
+<td>Perform file synchronization</td>
+<td><code>sync_repo --i</code></td>
+</tr>
+<tr>
+<td><code>--rb</code></td>
+<td></td>
+<td>Rollback to latest backup</td>
+<td><code>sync_repo --rb</code></td>
+</tr>
+<tr>
+<td><code>--rlp</code></td>
+<td></td>
+<td>Rollback last Git push</td>
+<td><code>sync_repo --rlp</code></td>
+</tr>
+<tr>
+<td><code>--rtc</code></td>
+<td></td>
+<td>Rollback to specific commit</td>
+<td><code>sync_repo --rtc</code></td>
+</tr>
+<tr>
+<td><code>--edit-track</code></td>
+<td><code>-et</code></td>
+<td>Edit repository tracking</td>
+<td><code>sync_repo --edit-track</code></td>
+</tr>
+<tr>
+<td><code>--show-ids</code></td>
+<td><code>-id</code></td>
+<td>Show operation IDs</td>
+<td><code>sync_repo --show-ids</code></td>
+</tr>
+<tr>
+<td><code>--clear-backups</code></td>
+<td></td>
+<td>Clear backup folder</td>
+<td><code>sync_repo --clear-backups</code></td>
+</tr>
+<tr>
+<td><code>--show-logs</code></td>
+<td></td>
+<td>Display available logs</td>
+<td><code>sync_repo --show-logs</code></td>
+</tr>
+<tr>
+<td><code>--version</code></td>
+<td></td>
+<td>Show script version</td>
+<td><code>sync_repo --version</code></td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td><code>-h</code></td>
+<td>Display help information</td>
+<td><code>sync_repo --help</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="practical-examples">📝 Practical Examples<a class="headerlink" href="#practical-examples" title="Permanent link">&para;</a></h2>
+<h3 id="example-1-syncing-between-two-git-repositories">Example 1: Syncing Between Two Git Repositories<a class="headerlink" href="#example-1-syncing-between-two-git-repositories" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Start synchronization process</span>
+sync_repo<span class="w"> </span>--i
+
+<span class="c1"># When prompted, enter Git URLs:</span>
+<span class="c1"># Source: git@github.com:username/source-repo.git</span>
+<span class="c1"># Destination: git@github.com:username/destination-repo.git</span>
+<span class="c1"># Follow the prompts to complete the sync</span>
+</code></pre></div>
+
+<h3 id="example-2-using-operation-ids-for-quick-access">Example 2: Using Operation IDs for Quick Access<a class="headerlink" href="#example-2-using-operation-ids-for-quick-access" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># First, view available operation IDs</span>
+sync_repo<span class="w"> </span>--show-ids
+
+<span class="c1"># Then use the operation ID for syncing</span>
+sync_repo<span class="w"> </span>--i
+<span class="c1"># When prompted, select option 2 for operation ID</span>
+<span class="c1"># Enter the ID shown from --show-ids command</span>
+</code></pre></div>
+
+<h3 id="example-3-rollback-after-a-failed-sync">Example 3: Rollback After a Failed Sync<a class="headerlink" href="#example-3-rollback-after-a-failed-sync" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># If a sync operation causes issues, roll back</span>
+sync_repo<span class="w"> </span>--rb
+
+<span class="c1"># Confirm the rollback when prompted</span>
+</code></pre></div>
+
+<hr />
+<h2 id="advanced-usage">🔍 Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">&para;</a></h2>
+<h3 id="working-with-branches">Working with Branches<a class="headerlink" href="#working-with-branches" title="Permanent link">&para;</a></h3>
+<p>The script allows you to specify and switch branches:</p>
+<ol>
+<li>
+<p>Edit a repository's branch:
+   <code>bash
+   sync_repo --edit-track
+   # Select the repository and choose option 3 to edit branch</code></p>
+</li>
+<li>
+<p>When cloning a new repository, you'll be prompted for branch name:
+   <code>Enter branch name for source repository [main]: develop</code></p>
+</li>
+</ol>
+<h3 id="repository-tracking-management">Repository Tracking Management<a class="headerlink" href="#repository-tracking-management" title="Permanent link">&para;</a></h3>
+<p>View all tracked repositories with detailed information:</p>
+<div class="codehilite"><pre><span></span><code>sync_repo<span class="w"> </span>--show-ids
+</code></pre></div>
+
+<p>Sample output:</p>
+<div class="codehilite"><pre><span></span><code>REPOSITORY TRACKING INFORMATION
+Total repositories: 3
+===============================================================
+ID       REPOSITORY NAME                          BRANCH          PATH
+===============================================================
+24681    username/frontend-app                    main            /home/user/.sync_repo/SYNC_DIR/2025_03_REPOS/19/source_DIR_A8B9C0
+---------------------------------------------------------------
+13579    username/backend-api                     develop         /home/user/.sync_repo/SYNC_DIR/2025_03_REPOS/19/dest_DIR_X7Y8Z9
+---------------------------------------------------------------
+97531    organization/shared-lib                  staging         /home/user/.sync_repo/SYNC_DIR/2025_03_REPOS/20/source_DIR_D4E5F6
+---------------------------------------------------------------
+</code></pre></div>
+
+<hr />
+<h2 id="configuration">⚙️ Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<h3 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
+<p>The script supports a <code>.env</code> file for development purposes:</p>
+<div class="codehilite"><pre><span></span><code><span class="gh">#</span> Sample .env file
+ENVIRONMENT=development
+BASE_DIR=/custom/path/to/sync_repo
+</code></pre></div>
+
+<h3 id="required-dependencies">Required Dependencies<a class="headerlink" href="#required-dependencies" title="Permanent link">&para;</a></h3>
+<p>Ensure the following commands are installed:
+- <code>tar</code>: For creating backups
+- <code>rsync</code>: For file synchronization
+- <code>git</code>: For repository operations
+- <code>jq</code>: For JSON parsing</p>
+<hr />
+<h2 id="troubleshooting">🔧 Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="common-issues-and-solutions">Common Issues and Solutions<a class="headerlink" href="#common-issues-and-solutions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Possible Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Permission denied</td>
+<td>Lack of write access</td>
+<td>Ensure you have write permissions to <code>~/.sync_repo</code></td>
+</tr>
+<tr>
+<td>Git operation failed</td>
+<td>Repository access issues</td>
+<td>Check repository permissions and credentials</td>
+</tr>
+<tr>
+<td>Command not found</td>
+<td>Missing dependencies</td>
+<td>Install required dependencies (tar, rsync, git, jq)</td>
+</tr>
+<tr>
+<td>Tracking file errors</td>
+<td>Corrupted JSON</td>
+<td>Run <code>sync_repo --edit-track</code> to fix or recreate tracking file</td>
+</tr>
+<tr>
+<td>Branch switching failed</td>
+<td>Non-existent branch</td>
+<td>Ensure the branch exists or create a new one when prompted</td>
+</tr>
+</tbody>
+</table>
+<h3 id="log-analysis">Log Analysis<a class="headerlink" href="#log-analysis" title="Permanent link">&para;</a></h3>
+<p>View detailed logs to diagnose issues:</p>
+<div class="codehilite"><pre><span></span><code>sync_repo<span class="w"> </span>--show-logs
+<span class="c1"># Select date and specific log file when prompted</span>
+</code></pre></div>
+
+<hr />
+<h2 id="future-enhancements">🔮 Future Enhancements<a class="headerlink" href="#future-enhancements" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Multi-User Support</strong>:</li>
+<li>System-wide configuration in <code>/var/lib/sync_repo</code></li>
+<li>
+<p>User permission management</p>
+</li>
+<li>
+<p><strong>Enhanced Logging</strong>:</p>
+</li>
+<li>Log rotation for efficient storage</li>
+<li>
+<p>Export logs in multiple formats (CSV, HTML)</p>
+</li>
+<li>
+<p><strong>Web Dashboard</strong>:</p>
+</li>
+<li>Real-time sync monitoring</li>
+<li>Visual repository management</li>
+<li>
+<p>Operation history and analytics</p>
+</li>
+<li>
+<p><strong>Advanced Rollback Features</strong>:</p>
+</li>
+<li>Selective file/directory rollback</li>
+<li>
+<p>Comparison view before rollback</p>
+</li>
+<li>
+<p><strong>Scheduled Operations</strong>:</p>
+</li>
+<li>Automated sync on predefined schedules</li>
+<li>Integration with cron jobs</li>
+</ol>
+<hr />
+<h2 id="support-contribution">🤝 Support &amp; Contribution<a class="headerlink" href="#support-contribution" title="Permanent link">&para;</a></h2>
+<h3 id="getting-help">Getting Help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h3>
+<p>For assistance or to report issues:
+- File an issue on the GitHub repository
+- Contact the development team at <code>support@example.com</code></p>
+<h3 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h3>
+<p>We welcome contributions to improve the script:
+1. Fork the repository
+2. Create a feature branch
+3. Submit a pull request with your changes</p>
+<hr />
+<h2 id="license">📜 License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>This script is licensed under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+<p>Copyright (c) 2025 Development Team</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://bitbucket.org/supratimneogi007" target="_blank" rel="noopener" title="Bitbucket Profile" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M22.2 32A16 16 0 0 0 6 47.8a26 26 0 0 0 .2 2.8l67.9 412.1a21.77 21.77 0 0 0 21.3 18.2h325.7a16 16 0 0 0 16-13.4L505 50.7a16 16 0 0 0-13.2-18.3 25 25 0 0 0-2.8-.2zm285.9 297.8h-104l-28.1-147h157.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
