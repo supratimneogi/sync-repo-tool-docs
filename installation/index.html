@@ -19,7 +19,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../usage-bkp/">
+        <link rel="next" href="../usage/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation" class="md-skip">
+        <a href="#installation-guide-for-sync-repos-tool" class="md-skip">
           Skip to content
         </a>
       
@@ -238,7 +238,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../usage-bkp/" class="md-tabs__link">
+      <a href="../usage/" class="md-tabs__link">
         
   
   
@@ -257,7 +257,26 @@
   
   
     <li class="md-tabs__item">
-      <a href="../guide-bkp/" class="md-tabs__link">
+      <a href="../detailedUsage/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Detailed Usage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../guide/" class="md-tabs__link">
         
   
   
@@ -276,7 +295,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../maintenance-bkp/" class="md-tabs__link">
+      <a href="../maintenance/" class="md-tabs__link">
         
   
   
@@ -432,6 +451,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installation-steps" class="md-nav__link">
     <span class="md-ellipsis">
       Installation Steps
@@ -455,6 +483,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#verifying-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verifying Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -470,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../usage-bkp/" class="md-nav__link">
+      <a href="../usage/" class="md-nav__link">
         
   
   
@@ -492,7 +547,29 @@
   
   
     <li class="md-nav__item">
-      <a href="../guide-bkp/" class="md-nav__link">
+      <a href="../detailedUsage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Detailed Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/" class="md-nav__link">
         
   
   
@@ -514,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../maintenance-bkp/" class="md-nav__link">
+      <a href="../maintenance/" class="md-nav__link">
         
   
   
@@ -578,6 +655,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installation-steps" class="md-nav__link">
     <span class="md-ellipsis">
       Installation Steps
@@ -601,6 +687,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#verifying-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verifying Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -620,16 +733,64 @@
   
 
 
-<h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
-<p>This document provides a step-by-step guide for DevOps personnel to install the <code>sync-repos</code> tool on Ubuntu systems.</p>
+<h1 id="installation-guide-for-sync-repos-tool">Installation Guide for Sync-Repos Tool<a class="headerlink" href="#installation-guide-for-sync-repos-tool" title="Permanent link">&para;</a></h1>
+<p>This beginner-friendly guide will help you install the <code>sync-repos</code> tool on Ubuntu systems.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Before installing, make sure you have:
+- An Ubuntu-based system
+- Sudo privileges on your system
+- A Bitbucket account with access to the repository
+- Your Bitbucket username and app password ready</p>
+<blockquote>
+<p><strong>Note:</strong> If you don't have an app password, you can create one in your Bitbucket account settings under "App passwords".</p>
+</blockquote>
 <h2 id="installation-steps">Installation Steps<a class="headerlink" href="#installation-steps" title="Permanent link">&para;</a></h2>
 <h3 id="1-install-the-sync-repos-tool">1. Install the <code>sync-repos</code> Tool<a class="headerlink" href="#1-install-the-sync-repos-tool" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Open a terminal.</li>
-<li>Execute the following command.</li>
+<li><strong>Open a terminal</strong></li>
+<li>
+<p>Press <code>Ctrl+Alt+T</code> to open a terminal window</p>
+</li>
+<li>
+<p><strong>Copy and paste the following command:</strong></p>
+</li>
 </ol>
 <p><code>bash
-   curl -L -u "&lt;your-username&gt;:&lt;your-app-password&gt;" -O "https://api.bitbucket.org/2.0/repositories/supratimneogi007/syncmaster/downloads/sync-repos_2.7.4_all.deb" &amp;&amp; sudo apt install ./sync-repos_2.7.4_all.deb</code></p>
+   curl -L -u "&lt;your-username&gt;:&lt;your-app-password&gt;" -O "https://api.bitbucket.org/2.0/repositories/supratimneogi007/syncmaster/downloads/sync-repos_2.8.4_all.deb" &amp;&amp; sudo apt install ./sync-repos_2.8.4_all.deb</code></p>
+<ol>
+<li><strong>Replace the placeholders:</strong></li>
+<li>Replace <code>&lt;your-username&gt;</code> with your Bitbucket username</li>
+<li>
+<p>Replace <code>&lt;your-app-password&gt;</code> with your Bitbucket app password</p>
+</li>
+<li>
+<p><strong>Press Enter to run the command</strong></p>
+</li>
+<li>You'll be prompted to enter your system password for the <code>sudo</code> command</li>
+<li>The tool will download and install automatically</li>
+</ol>
+<h2 id="verifying-installation">Verifying Installation<a class="headerlink" href="#verifying-installation" title="Permanent link">&para;</a></h2>
+<p>To verify that the installation was successful:</p>
+<ol>
+<li>
+<p>Run the following command:
+   <code>bash
+   sync-repos --help</code></p>
+</li>
+<li>
+<p>You should see the help menu for the sync-repos tool</p>
+</li>
+</ol>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p>If you encounter any issues during installation:</p>
+<ul>
+<li><strong>Authentication errors</strong>: Make sure your Bitbucket username and app password are correct</li>
+<li><strong>Download failures</strong>: Check your internet connection and try again</li>
+<li><strong>Permission errors</strong>: Ensure you have sudo privileges on your system</li>
+</ul>
+<p>For additional help, contact your system administrator or check the <a href="../troubleshooting/">troubleshooting guide</a>.</p>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>Now that you've installed the tool, check out the <a href="../usage/">usage guide</a> to learn how to use sync-repos effectively.</p>
 
 
 

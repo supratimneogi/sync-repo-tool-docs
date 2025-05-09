@@ -16,6 +16,10 @@
         <link rel="canonical" href="http://192.168.1.100:8000/maintenance/">
       
       
+        <link rel="prev" href="../guide/">
+      
+      
+        <link rel="next" href="../troubleshooting/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -73,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#repository-structure" class="md-skip">
+        <a href="#development-maintenance-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -232,7 +236,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../usage-bkp/" class="md-tabs__link">
+      <a href="../usage/" class="md-tabs__link">
         
   
   
@@ -251,7 +255,26 @@
   
   
     <li class="md-tabs__item">
-      <a href="../guide-bkp/" class="md-tabs__link">
+      <a href="../detailedUsage/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Detailed Usage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../guide/" class="md-tabs__link">
         
   
   
@@ -268,9 +291,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../maintenance-bkp/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -398,7 +423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../usage-bkp/" class="md-nav__link">
+      <a href="../usage/" class="md-nav__link">
         
   
   
@@ -420,7 +445,29 @@
   
   
     <li class="md-nav__item">
-      <a href="../guide-bkp/" class="md-nav__link">
+      <a href="../detailedUsage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Detailed Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/" class="md-nav__link">
         
   
   
@@ -439,10 +486,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../maintenance-bkp/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Maintenance
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -453,6 +522,191 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#repository-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repository Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-clone-the-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Clone the Repository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-a-feature-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Create a Feature Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-develop-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Develop Your Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-push-changes-to-remote-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Push Changes to Remote Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-create-a-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Create a Pull Request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-code-review-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Code Review Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-testing-on-development-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Testing on Development Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-merge-to-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Merge to Master
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-release-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Release Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-verify-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Verify Release
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintenance Tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maintenance Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tracking-version-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tracking Version History
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation Updates
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -496,6 +750,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -513,22 +769,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#development-process" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      Development Process
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Steps
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Steps">
+    <nav class="md-nav" aria-label="Development Process">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -540,8 +787,140 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#2-create-a-feature-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Create a Feature Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-develop-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Develop Your Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-push-changes-to-remote-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Push Changes to Remote Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-create-a-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Create a Pull Request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-code-review-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Code Review Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-testing-on-development-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Testing on Development Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-merge-to-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Merge to Master
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-release-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Release Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-verify-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Verify Release
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintenance Tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maintenance Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tracking-version-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tracking Version History
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation Updates
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
   
 </li>
       
@@ -564,31 +943,136 @@
   
 
 
-  <h1>Maintenance</h1>
-
+<h1 id="development-maintenance-guide">Development &amp; Maintenance Guide<a class="headerlink" href="#development-maintenance-guide" title="Permanent link">&para;</a></h1>
 <p>This section is for developers maintaining the <code>sync-repos</code> tool.</p>
 <h2 id="repository-structure">Repository Structure<a class="headerlink" href="#repository-structure" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Location</strong>: <code>git@bitbucket.org:supratimneogi007/syncmaster.git</code></li>
-<li><strong>Structure</strong>:
-syncmaster/
-├── src/
-│   └── sync_repos.sh      # Source script
-├── dist/
-│   └── sync-repos_1.0.0_all.deb  # Built .deb package
-├── build.sh               # Build script
-└── README.md              # Documentation</li>
+<li><strong>Structure</strong>:</li>
 </ul>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Tools</strong>: <code>git</code>, <code>dpkg-dev</code>, <code>curl</code></li>
-<li><strong>Permissions</strong>: Write access to <code>supratimneogi007/syncmaster</code></li>
-</ul>
-<h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="nx">syncmaster</span><span class="o">/</span>
+<span class="err">├──</span><span class="w"> </span><span class="nx">src</span><span class="o">/</span>
+<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="nx">sync_repos</span><span class="p">.</span><span class="nx">sh</span><span class="w">      </span><span class="err">#</span><span class="w"> </span><span class="nx">Source</span><span class="w"> </span><span class="nx">script</span>
+<span class="err">├──</span><span class="w"> </span><span class="nx">syncRepoV3_LTS</span><span class="p">.</span><span class="nx">sh</span><span class="w">      </span><span class="err">#</span><span class="w"> </span><span class="nx">LTS</span><span class="w"> </span><span class="nx">version</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">script</span>
+<span class="err">├──</span><span class="w"> </span><span class="nx">sync</span><span class="o">-</span><span class="nx">repos</span><span class="o">-</span><span class="nx">deb</span><span class="o">/</span><span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="nx">Debian</span><span class="w"> </span><span class="kn">package</span><span class="w"> </span><span class="nx">files</span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="nx">src</span><span class="o">/</span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="nx">index</span><span class="p">.</span><span class="nx">sh</span><span class="w">       </span><span class="err">#</span><span class="w"> </span><span class="nx">Copy</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">LTS</span><span class="w"> </span><span class="nx">script</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">deb</span><span class="w"> </span><span class="kn">package</span>
+<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="nx">build</span><span class="p">.</span><span class="nx">sh</span><span class="w">           </span><span class="err">#</span><span class="w"> </span><span class="nx">Build</span><span class="w"> </span><span class="nx">script</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">deb</span><span class="w"> </span><span class="kn">package</span>
+<span class="err">├──</span><span class="w"> </span><span class="nx">dist</span><span class="o">/</span>
+<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="nx">sync</span><span class="o">-</span><span class="nx">repos_x</span><span class="p">.</span><span class="nx">x</span><span class="p">.</span><span class="nx">x_all</span><span class="p">.</span><span class="nx">deb</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="nx">Built</span><span class="w"> </span><span class="p">.</span><span class="nx">deb</span><span class="w"> </span><span class="kn">package</span>
+<span class="err">├──</span><span class="w"> </span><span class="nx">deb_update</span><span class="p">.</span><span class="nx">sh</span><span class="w">          </span><span class="err">#</span><span class="w"> </span><span class="nx">Script</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">update</span><span class="w"> </span><span class="nx">deb</span><span class="w"> </span><span class="kn">package</span>
+<span class="err">└──</span><span class="w"> </span><span class="nx">README</span><span class="p">.</span><span class="nx">md</span><span class="w">              </span><span class="err">#</span><span class="w"> </span><span class="nx">Documentation</span>
+</code></pre></div>
+
+<h2 id="development-process">Development Process<a class="headerlink" href="#development-process" title="Permanent link">&para;</a></h2>
 <h3 id="1-clone-the-repository">1. Clone the Repository<a class="headerlink" href="#1-clone-the-repository" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>git@bitbucket.org:supratimneogi007/syncmaster.git
 <span class="nb">cd</span><span class="w"> </span>syncmaster
 </code></pre></div>
+
+<h3 id="2-create-a-feature-branch">2. Create a Feature Branch<a class="headerlink" href="#2-create-a-feature-branch" title="Permanent link">&para;</a></h3>
+<p>Create a new branch with a specific naming convention:</p>
+<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/purpose/branchName
+</code></pre></div>
+
+<p>Examples:
+- <code>feature/ui/improved-logging</code>
+- <code>bugfix/backup/fix-permissions</code>
+- <code>enhancement/performance/reduce-memory-usage</code></p>
+<h3 id="3-develop-your-changes">3. Develop Your Changes<a class="headerlink" href="#3-develop-your-changes" title="Permanent link">&para;</a></h3>
+<p>Make your changes to the codebase. Be sure to test your changes locally.</p>
+<h3 id="4-push-changes-to-remote-branch">4. Push Changes to Remote Branch<a class="headerlink" href="#4-push-changes-to-remote-branch" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Meaningful commit message describing the changes&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/purpose/branchName
+</code></pre></div>
+
+<h3 id="5-create-a-pull-request">5. Create a Pull Request<a class="headerlink" href="#5-create-a-pull-request" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Go to the BitBucket repository</li>
+<li>Create a new Pull Request</li>
+<li>Set the source branch to your feature branch</li>
+<li>Set the target branch to <code>development</code></li>
+<li>Add a descriptive title and details about your changes</li>
+<li>Request reviewers</li>
+</ul>
+<h3 id="6-code-review-process">6. Code Review Process<a class="headerlink" href="#6-code-review-process" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Reviewers will examine the code changes</li>
+<li>Address any feedback in the PR</li>
+<li>Once approved, the PR will be merged into the <code>development</code> branch</li>
+</ul>
+<h3 id="7-testing-on-development-branch">7. Testing on Development Branch<a class="headerlink" href="#7-testing-on-development-branch" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The changes in the <code>development</code> branch undergo testing</li>
+<li>Fix any issues that arise during testing</li>
+<li>Create additional PRs if needed for fixes</li>
+</ul>
+<h3 id="8-merge-to-master">8. Merge to Master<a class="headerlink" href="#8-merge-to-master" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Once testing confirms the changes are stable, create a PR from <code>development</code> to <code>master</code></li>
+<li>After approval, merge into the <code>master</code> branch</li>
+</ul>
+<h3 id="9-release-process">9. Release Process<a class="headerlink" href="#9-release-process" title="Permanent link">&para;</a></h3>
+<p>After merging changes to the <code>master</code> branch:</p>
+<ol>
+<li>
+<p>Run the update script to update the deb package source:
+   <code>bash
+   cd /path/to/syncmaster
+   bash deb_update.sh</code></p>
+</li>
+<li>
+<p>When prompted, enter the new version number (e.g., 2.7.4)</p>
+</li>
+<li>Follow semantic versioning (MAJOR.MINOR.PATCH)</li>
+<li>
+<p>Increment appropriately based on the changes:</p>
+<ul>
+<li>MAJOR: incompatible API changes</li>
+<li>MINOR: backward-compatible new functionality</li>
+<li>PATCH: backward-compatible bug fixes</li>
+</ul>
+</li>
+<li>
+<p>Change to the sync-repos-deb directory:
+   <code>bash
+   cd sync-repos-deb</code></p>
+</li>
+<li>
+<p>Build the Debian package:
+   <code>bash
+   bash build.sh</code></p>
+</li>
+<li>
+<p>The script will:</p>
+</li>
+<li>Build the .deb package</li>
+<li>Upload it to BitBucket</li>
+<li>Update the version in documentation</li>
+</ol>
+<h3 id="10-verify-release">10. Verify Release<a class="headerlink" href="#10-verify-release" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Download the new .deb package</li>
+<li>Install it on a test system</li>
+<li>Verify the changes work as expected</li>
+</ul>
+<h2 id="maintenance-tasks">Maintenance Tasks<a class="headerlink" href="#maintenance-tasks" title="Permanent link">&para;</a></h2>
+<h3 id="tracking-version-history">Tracking Version History<a class="headerlink" href="#tracking-version-history" title="Permanent link">&para;</a></h3>
+<p>Keep a changelog documenting all significant changes in each version.</p>
+<h3 id="managing-dependencies">Managing Dependencies<a class="headerlink" href="#managing-dependencies" title="Permanent link">&para;</a></h3>
+<p>Regularly check and update dependencies and required packages listed in the Debian control file.</p>
+<h3 id="documentation-updates">Documentation Updates<a class="headerlink" href="#documentation-updates" title="Permanent link">&para;</a></h3>
+<p>When making changes to functionality, ensure that documentation is updated accordingly:
+- README.md
+- Installation docs
+- Usage guides</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p>If issues occur during the build process:
+- Check the build logs
+- Verify file permissions
+- Ensure all required tools are installed
+- Check BitBucket API access tokens for validity</p>
 
 
 

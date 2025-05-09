@@ -16,6 +16,10 @@
         <link rel="canonical" href="http://192.168.1.100:8000/usage/">
       
       
+        <link rel="prev" href="../installation/">
+      
+      
+        <link rel="next" href="../detailedUsage/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -73,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#usage" class="md-skip">
+        <a href="#sync-repositories-tool-user-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -230,9 +234,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../usage-bkp/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -251,7 +257,26 @@
   
   
     <li class="md-tabs__item">
-      <a href="../guide-bkp/" class="md-tabs__link">
+      <a href="../detailedUsage/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Detailed Usage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../guide/" class="md-tabs__link">
         
   
   
@@ -270,7 +295,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../maintenance-bkp/" class="md-tabs__link">
+      <a href="../maintenance/" class="md-tabs__link">
         
   
   
@@ -395,15 +420,199 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../usage-bkp/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Usage
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     Usage
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-i-perform-file-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. --i - Perform File Synchronization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-show-ids-id-show-operation-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. --show-ids, -id - Show Operation IDs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-rb-rollback-to-the-latest-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. --rb - Rollback to the Latest Backup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-edit-track-et-edit-the-repository-tracking-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. --edit-track, -et - Edit the Repository Tracking File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-show-logs-display-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. --show-logs - Display Logs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-clear-backups-clear-the-backup-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. --clear-backups - Clear the Backup Folder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-rlp-rollback-the-last-git-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. --rlp - Rollback the Last Git Push
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-rtc-rollback-to-a-specific-git-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. --rtc - Rollback to a Specific Git Commit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../detailedUsage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Detailed Usage
     
   </span>
   
@@ -420,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../guide-bkp/" class="md-nav__link">
+      <a href="../guide/" class="md-nav__link">
         
   
   
@@ -442,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../maintenance-bkp/" class="md-nav__link">
+      <a href="../maintenance/" class="md-nav__link">
         
   
   
@@ -506,227 +715,92 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#running-the-tool" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Running the Tool
+      Usage
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-functionality" class="md-nav__link">
-    <span class="md-ellipsis">
-      Core Functionality
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#options" class="md-nav__link">
     <span class="md-ellipsis">
       Options
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#synchronization-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      Synchronization Process
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Synchronization Process">
+    <nav class="md-nav" aria-label="Options">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#input-handling" class="md-nav__link">
+  <a href="#1-i-perform-file-synchronization" class="md-nav__link">
     <span class="md-ellipsis">
-      Input Handling
+      1. --i - Perform File Synchronization
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
+  <a href="#2-show-ids-id-show-operation-ids" class="md-nav__link">
     <span class="md-ellipsis">
-      Validation
+      2. --show-ids, -id - Show Operation IDs
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#synchronization" class="md-nav__link">
+  <a href="#3-rb-rollback-to-the-latest-backup" class="md-nav__link">
     <span class="md-ellipsis">
-      Synchronization
+      3. --rb - Rollback to the Latest Backup
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#logging-and-backup" class="md-nav__link">
+  <a href="#4-edit-track-et-edit-the-repository-tracking-file" class="md-nav__link">
     <span class="md-ellipsis">
-      Logging and Backup
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-line-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Command-Line Options
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage-examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usage Examples
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Usage Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rollback-to-a-previous-state" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rollback to a Previous State
+      4. --edit-track, -et - Edit the Repository Tracking File
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#rollback-last-git-push" class="md-nav__link">
+  <a href="#5-show-logs-display-logs" class="md-nav__link">
     <span class="md-ellipsis">
-      Rollback Last Git Push
+      5. --show-logs - Display Logs
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#rollback-to-a-specific-commit" class="md-nav__link">
+  <a href="#6-clear-backups-clear-the-backup-folder" class="md-nav__link">
     <span class="md-ellipsis">
-      Rollback to a Specific Commit
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#runtime-artifacts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Runtime Artifacts
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Runtime Artifacts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#directory-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Directory Structure
+      6. --clear-backups - Clear the Backup Folder
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#logs" class="md-nav__link">
+  <a href="#7-rlp-rollback-the-last-git-push" class="md-nav__link">
     <span class="md-ellipsis">
-      Logs
+      7. --rlp - Rollback the Last Git Push
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#backups" class="md-nav__link">
+  <a href="#8-rtc-rollback-to-a-specific-git-commit" class="md-nav__link">
     <span class="md-ellipsis">
-      Backups
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cloned-repositories" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cloned Repositories
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tracking-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tracking File
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced Usage
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advanced Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#synchronizing-git-repositories" class="md-nav__link">
-    <span class="md-ellipsis">
-      Synchronizing Git Repositories
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Synchronizing Git Repositories">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-sync-a-git-repository" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Sync a Git Repository
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-roll-back-to-a-commit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Roll Back to a Commit
+      8. --rtc - Rollback to a Specific Git Commit
     </span>
   </a>
   
@@ -737,33 +811,24 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#using-op_ids" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using OP_IDs
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#additional-notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Best Practices
+      Additional Notes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#getting-started" class="md-nav__link">
     <span class="md-ellipsis">
-      Troubleshooting
+      Getting Started
     </span>
   </a>
   
@@ -788,171 +853,762 @@
   
 
 
-<h1 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h1>
-<p>This guide provides detailed instructions on how to use the <code>sync-repos</code> tool effectively after installation.</p>
-<h2 id="running-the-tool">Running the Tool<a class="headerlink" href="#running-the-tool" title="Permanent link">&para;</a></h2>
+<h1 id="sync-repositories-tool-user-guide">Sync Repositories Tool - User Guide<a class="headerlink" href="#sync-repositories-tool-user-guide" title="Permanent link">&para;</a></h1>
+<p>This document provides a detailed guide on how to use the <code>sync-repos</code> tool for synchronizing files, managing backups, and handling Git repositories. The tool is designed to be user-friendly and supports various operations like rollback, editing tracking files, and displaying logs.</p>
+<hr />
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>Run the tool with one of the following options:</p>
+<div class="codehilite"><pre><span></span><code>sync-repos<span class="w"> </span><span class="o">[</span>OPTION<span class="o">]</span>
+</code></pre></div>
+
+<h3 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h3>
+<h4 id="1-i-perform-file-synchronization">1. <code>--i</code> - Perform File Synchronization<a class="headerlink" href="#1-i-perform-file-synchronization" title="Permanent link">&para;</a></h4>
+<p>Synchronizes files between the source and destination directories or Git repositories. This operation includes:
+- Pulling the latest changes from the source repository.
+- Backing up the destination directory before syncing.
+- Synchronizing files while excluding <code>.git</code> and <code>node_modules</code>.</p>
+<p><strong>Detailed Steps:</strong>
+1. Run the following command:
+   <code>bash
+   sync-repos --i</code></p>
 <ol>
-<li>Open a terminal and execute the following command:
-   <code>bash
-   sync-repos</code></li>
-<li>Alternatively, use the interactive mode:
-   <code>bash
-   sync-repos --i</code></li>
-<li>Follow the prompts to specify the source and destination paths:
-   <code>bash
-   Enter source path (default: /home/user/.sync-repos/source): /path/to/source
-   Enter destination path (default: /home/user/.sync-repos/dest): /path/to/dest</code></li>
+<li><strong>Source Directory Selection:</strong></li>
+<li>You will see a prompt: "Source Directory - Choose an option: (1) GIT URL (2) OP_ID"</li>
+<li>Enter <code>1</code> to provide a Git URL or <code>2</code> to provide an Operation ID (OP_ID).</li>
 </ol>
-<h2 id="core-functionality">Core Functionality<a class="headerlink" href="#core-functionality" title="Permanent link">&para;</a></h2>
-<p>The <code>sync-repos</code> tool supports synchronization across the following:</p>
-<ul>
-<li><strong>Local Directories:</strong> Copies files and directories while preserving structure, permissions, and timestamps.</li>
-<li><strong>Git Repositories:</strong> Clones or pulls from Git URLs, with rollback and commit-based synchronization options.</li>
-<li><strong>OP_IDs:</strong> Custom identifiers for predefined synchronization tasks (if configured).</li>
-</ul>
-<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong><code>--rb</code></strong>: Roll back to a previous state.</li>
-<li><strong><code>--rlp</code></strong>: Roll back the last push (Git only).</li>
-<li><strong><code>--rtc</code></strong>: Roll back to a specific commit (Git only).</li>
-<li><strong><code>--edit-track</code></strong>: Edit repos track files.</li>
-<li><strong><code>--show-ids</code></strong>: Views repos track files.</li>
-<li><strong><code>--help</code> or <code>-h</code></strong>: Display the help menu.</li>
-</ul>
-<hr />
-<h2 id="synchronization-process">Synchronization Process<a class="headerlink" href="#synchronization-process" title="Permanent link">&para;</a></h2>
-<h3 id="input-handling">Input Handling<a class="headerlink" href="#input-handling" title="Permanent link">&para;</a></h3>
-<p>Accepts source and destination inputs, which can be directories, Git URLs, or OP_IDs.</p>
-<h3 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h3>
-<p>Verifies that the provided paths or URLs are valid and accessible.</p>
-<h3 id="synchronization">Synchronization<a class="headerlink" href="#synchronization" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>For Directories:</strong> Uses <code>rsync</code> to efficiently copy files.</li>
-<li><strong>For Git Repositories:</strong> Clones or pulls changes, supporting rollback to prior states.</li>
-</ul>
-<h3 id="logging-and-backup">Logging and Backup<a class="headerlink" href="#logging-and-backup" title="Permanent link">&para;</a></h3>
-<p>Generates logs and backups for auditing and recovery.</p>
-<hr />
-<h2 id="command-line-options">Command-Line Options<a class="headerlink" href="#command-line-options" title="Permanent link">&para;</a></h2>
-<p>Customize the tool’s behavior using the following options:</p>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--rb</code></td>
-<td>Rolls back to a previous synchronization state (directory or Git).</td>
-</tr>
-<tr>
-<td><code>--rlp</code></td>
-<td>Rolls back the last push (Git repositories only).</td>
-</tr>
-<tr>
-<td><code>--rtc</code></td>
-<td>Rolls back to a specific commit (Git repositories only).</td>
-</tr>
-<tr>
-<td><code>--edit-track</code></td>
-<td>Edit repos track files..</td>
-</tr>
-<tr>
-<td><code>--show-ids</code></td>
-<td>Views repos track files.</td>
-</tr>
-<tr>
-<td><code>--help</code>, <code>-h</code></td>
-<td>Displays the help menu with usage details.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="usage-examples">Usage Examples<a class="headerlink" href="#usage-examples" title="Permanent link">&para;</a></h2>
-<h3 id="rollback-to-a-previous-state">Rollback to a Previous State<a class="headerlink" href="#rollback-to-a-previous-state" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>sync-repos<span class="w"> </span>--rb
-</code></pre></div>
-
-<h3 id="rollback-last-git-push">Rollback Last Git Push<a class="headerlink" href="#rollback-last-git-push" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>sync-repos<span class="w"> </span>--rlp
-</code></pre></div>
-
-<h3 id="rollback-to-a-specific-commit">Rollback to a Specific Commit<a class="headerlink" href="#rollback-to-a-specific-commit" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>sync-repos<span class="w"> </span>--rtc<span class="w"> </span>&lt;commit-hash&gt;
-</code></pre></div>
-
-<hr />
-<h2 id="runtime-artifacts">Runtime Artifacts<a class="headerlink" href="#runtime-artifacts" title="Permanent link">&para;</a></h2>
-<p>The tool creates and manages files in <code>~/.sync-repos/</code> to track synchronization states, logs, and backups. Understanding these artifacts aids in troubleshooting and recovery.</p>
-<h3 id="directory-structure">Directory Structure<a class="headerlink" href="#directory-structure" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="o">~/.</span><span class="n">DevOps_tool</span><span class="o">/</span>
-<span class="err">├──</span><span class="w"> </span><span class="n">LOGS</span><span class="o">/</span>
-<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="o">&lt;</span><span class="n">date</span><span class="o">&gt;/</span><span class="w">            </span><span class="c1"># Logs for each synchronization run</span>
-<span class="err">├──</span><span class="w"> </span><span class="n">BACKUP</span><span class="o">/</span><span class="w">                </span><span class="c1"># Backups of synchronized data</span>
-<span class="err">├──</span><span class="w"> </span><span class="n">SYNC_DIR</span><span class="o">/</span><span class="w">              </span><span class="c1"># Cloned Git repositories</span>
-<span class="w">    </span><span class="err">└──</span><span class="w"> </span><span class="n">repo_tracking</span><span class="o">.</span><span class="n">json</span><span class="w"> </span><span class="c1"># Tracks synchronization history</span>
-</code></pre></div>
-
-<h3 id="logs">Logs<a class="headerlink" href="#logs" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Location:</strong> <code>~/.sync-repos/logs/&lt;date&gt;/</code></li>
-<li><strong>Purpose:</strong> Records actions, errors, and warnings from each synchronization.</li>
-</ul>
-<h3 id="backups">Backups<a class="headerlink" href="#backups" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Location:</strong> <code>~/.sync-repos/backups/</code></li>
-<li><strong>Purpose:</strong> Stores pre-synchronization backups for rollback.</li>
-</ul>
-<h3 id="cloned-repositories">Cloned Repositories<a class="headerlink" href="#cloned-repositories" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Location:</strong> <code>~/.sync-repos/SYNC_DIR/</code></li>
-<li><strong>Purpose:</strong> Holds cloned Git repositories for state management.</li>
-</ul>
-<h3 id="tracking-file">Tracking File<a class="headerlink" href="#tracking-file" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>File:</strong> <code>repo_tracking.json</code></li>
-<li><strong>Purpose:</strong> Logs synchronization history, including timestamps, paths, and Git commit hashes.</li>
-</ul>
-<hr />
-<h2 id="advanced-usage">Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">&para;</a></h2>
-<h3 id="synchronizing-git-repositories">Synchronizing Git Repositories<a class="headerlink" href="#synchronizing-git-repositories" title="Permanent link">&para;</a></h3>
-<p>The tool offers enhanced Git support:</p>
-<ul>
-<li><strong>Cloning:</strong> Clones a repository if the destination doesn’t exist.</li>
-<li><strong>Pulling:</strong> Updates an existing destination with the latest changes.</li>
-<li><strong>Rollback:</strong> Reverts to previous commits or states using <code>--rb</code>, <code>--rlp</code>, or <code>--rtc</code>.</li>
-</ul>
-<h4 id="example-sync-a-git-repository">Example: Sync a Git Repository<a class="headerlink" href="#example-sync-a-git-repository" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>sync-repos
-Enter<span class="w"> </span><span class="nb">source</span><span class="w"> </span>path:<span class="w"> </span>https://bitbucket.org/supratimneogi007/syncmaster.git
-Enter<span class="w"> </span>destination<span class="w"> </span>path:<span class="w"> </span>/path/to/local/repo
-</code></pre></div>
-
-<h4 id="example-roll-back-to-a-commit">Example: Roll Back to a Commit<a class="headerlink" href="#example-roll-back-to-a-commit" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>sync-repos<span class="w"> </span>--rtc<span class="w"> </span>abc123def456
-</code></pre></div>
-
-<h3 id="using-op_ids">Using OP_IDs<a class="headerlink" href="#using-op_ids" title="Permanent link">&para;</a></h3>
-<p>For predefined tasks identified by OP_IDs, input the ID instead of paths:</p>
+<p><strong>If you chose option 1 (GIT URL):</strong>
+   - You will see: "Enter Git URL:"
+   - Enter the complete Git URL (e.g., https://github.com/username/repo.git)
+   - You will be prompted: "Enter branch name (default: main):"
+   - Enter the branch name or press Enter to use the default</p>
+<p><strong>If you chose option 2 (OP_ID):</strong>
+   - You will see: "Enter OP_ID:"
+   - Enter the numerical Operation ID shown from the <code>--show-ids</code> command</p>
+<ol>
+<li><strong>Destination Directory Selection:</strong></li>
+<li>You will see a prompt: "Destination Directory - Choose an option: (1) GIT URL (2) OP_ID"</li>
+<li>Enter <code>1</code> to provide a Git URL or <code>2</code> to provide an Operation ID (OP_ID).</li>
+</ol>
+<p><strong>If you chose option 1 (GIT URL):</strong>
+   - You will see: "Enter Git URL:"
+   - Enter the complete Git URL for the destination repository
+   - You will be prompted: "Enter branch name (default: main):"
+   - Enter the branch name or press Enter to use the default</p>
+<p><strong>If you chose option 2 (OP_ID):</strong>
+   - You will see: "Enter OP_ID:"
+   - Enter the numerical Operation ID for the destination repository</p>
+<ol>
+<li><strong>Backup Creation:</strong></li>
+<li>The system will display: "Creating backup of destination directory..."</li>
+<li>A progress indicator will show the backup creation process</li>
+<li>
+<p>You'll see a confirmation message once the backup is complete with the backup filename</p>
+</li>
+<li>
+<p><strong>Pull Latest Changes:</strong></p>
+</li>
+<li>The system will display: "Pulling latest changes from source repository..."</li>
+<li>
+<p>Git pull output will be shown as changes are retrieved</p>
+</li>
+<li>
+<p><strong>File Synchronization:</strong></p>
+</li>
+<li>The system will display: "Synchronizing files..."</li>
+<li>You'll see rsync output showing which files are being copied/updated</li>
+<li>
+<p>A confirmation message will appear once synchronization is complete</p>
+</li>
+<li>
+<p><strong>Git Operations:</strong></p>
+</li>
+<li>You will be prompted: "Do you want to perform Git operations? (yes/no)"</li>
+</ol>
+<p><strong>If you choose "yes":</strong>
+   - The system will display the Git status showing new/modified/deleted files
+   - You will be prompted: "Do you want to add all changes? (yes/no)"</p>
+<p><strong>If you choose "yes" to add changes:</strong>
+   - The system will execute <code>git add .</code> and show the output
+   - You will be prompted: "Enter commit message:"
+   - Enter your descriptive commit message
+   - The system will create the commit and show the commit hash
+   - You will be prompted: "Do you want to push changes? (yes/no)"</p>
+<p><strong>If you choose "yes" to push changes:</strong>
+   - The system will push the changes to the remote repository
+   - You'll see the Git push output and confirmation</p>
+<p><strong>If you choose "no" at any point:</strong>
+   - The operation will skip to the next step or finish if it's the last step</p>
+<ol>
+<li><strong>Operation Complete:</strong></li>
+<li>The system will display: "Synchronization completed successfully."</li>
+<li>You'll be returned to the command prompt</li>
+</ol>
+<p><strong>Example:</strong></p>
 <div class="codehilite"><pre><span></span><code>sync-repos<span class="w"> </span>--i
-Enter<span class="w"> </span><span class="nb">source</span><span class="w"> </span>path:<span class="w"> </span>OP_ID:12345
+
+Source<span class="w"> </span>Directory<span class="w"> </span>-<span class="w"> </span>Choose<span class="w"> </span>an<span class="w"> </span>option:<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span>GIT<span class="w"> </span>URL<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="o">)</span><span class="w"> </span>OP_ID
+<span class="m">1</span>
+Enter<span class="w"> </span>Git<span class="w"> </span>URL:<span class="w"> </span>https://github.com/user/source-repo.git
+Enter<span class="w"> </span>branch<span class="w"> </span>name<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>main<span class="o">)</span>:<span class="w"> </span>develop
+
+Destination<span class="w"> </span>Directory<span class="w"> </span>-<span class="w"> </span>Choose<span class="w"> </span>an<span class="w"> </span>option:<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span>GIT<span class="w"> </span>URL<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="o">)</span><span class="w"> </span>OP_ID
+<span class="m">2</span>
+Enter<span class="w"> </span>OP_ID:<span class="w"> </span><span class="m">3</span>
+
+Creating<span class="w"> </span>backup<span class="w"> </span>of<span class="w"> </span>destination<span class="w"> </span>directory...
+Backup<span class="w"> </span>created:<span class="w"> </span>/home/user/backups/dest-repo-2023-11-28-143022.tar.gz
+
+Pulling<span class="w"> </span>latest<span class="w"> </span>changes<span class="w"> </span>from<span class="w"> </span><span class="nb">source</span><span class="w"> </span>repository...
+Already<span class="w"> </span>up<span class="w"> </span>to<span class="w"> </span>date.
+
+Synchronizing<span class="w"> </span>files...
+sending<span class="w"> </span>incremental<span class="w"> </span>file<span class="w"> </span>list
+index.js
+src/utils.js
+README.md
+
+Synchronization<span class="w"> </span>complete.
+
+Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>perform<span class="w"> </span>Git<span class="w"> </span>operations?<span class="w"> </span><span class="o">(</span>yes/no<span class="o">)</span>
+yes
+
+Changes<span class="w"> </span><span class="k">in</span><span class="w"> </span>destination<span class="w"> </span>repository:
+M<span class="w">  </span>index.js
+M<span class="w">  </span>src/utils.js
+M<span class="w">  </span>README.md
+
+Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>add<span class="w"> </span>all<span class="w"> </span>changes?<span class="w"> </span><span class="o">(</span>yes/no<span class="o">)</span>
+yes
+
+Added<span class="w"> </span>all<span class="w"> </span>changes.
+
+Enter<span class="w"> </span>commit<span class="w"> </span>message:<span class="w"> </span>Update<span class="w"> </span>utils<span class="w"> </span>and<span class="w"> </span>documentation
+<span class="o">[</span>develop<span class="w"> </span>8a2b3c4<span class="o">]</span><span class="w"> </span>Update<span class="w"> </span>utils<span class="w"> </span>and<span class="w"> </span>documentation
+<span class="w"> </span><span class="m">3</span><span class="w"> </span>files<span class="w"> </span>changed,<span class="w"> </span><span class="m">45</span><span class="w"> </span>insertions<span class="o">(</span>+<span class="o">)</span>,<span class="w"> </span><span class="m">12</span><span class="w"> </span>deletions<span class="o">(</span>-<span class="o">)</span>
+
+Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>push<span class="w"> </span>changes?<span class="w"> </span><span class="o">(</span>yes/no<span class="o">)</span>
+yes
+
+Pushing<span class="w"> </span>changes<span class="w"> </span>to<span class="w"> </span>remote<span class="w"> </span>repository...
+Enumerating<span class="w"> </span>objects:<span class="w"> </span><span class="m">9</span>,<span class="w"> </span><span class="k">done</span>.
+Counting<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">9</span>/9<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+Delta<span class="w"> </span>compression<span class="w"> </span>using<span class="w"> </span>up<span class="w"> </span>to<span class="w"> </span><span class="m">8</span><span class="w"> </span>threads
+Compressing<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">5</span>/5<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+Writing<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">5</span>/5<span class="o">)</span>,<span class="w"> </span><span class="m">578</span><span class="w"> </span>bytes<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">578</span>.00<span class="w"> </span>KiB/s,<span class="w"> </span><span class="k">done</span>.
+Total<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">3</span><span class="o">)</span>,<span class="w"> </span>reused<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">0</span><span class="o">)</span>
+To<span class="w"> </span>https://github.com/user/dest-repo.git
+<span class="w">   </span>a1b2c3d..8a2b3c4<span class="w">  </span>develop<span class="w"> </span>-&gt;<span class="w"> </span>develop
+
+Synchronization<span class="w"> </span>completed<span class="w"> </span>successfully.
 </code></pre></div>
 
-<p>The tool maps the OP_ID to configured source and destination paths.</p>
 <hr />
-<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<h4 id="2-show-ids-id-show-operation-ids">2. <code>--show-ids</code>, <code>-id</code> - Show Operation IDs<a class="headerlink" href="#2-show-ids-id-show-operation-ids" title="Permanent link">&para;</a></h4>
+<p>Displays a list of all tracked repositories along with their operation IDs, repository URLs, branches, and paths.</p>
+<p><strong>Detailed Steps:</strong>
+1. Run the following command:
+   <code>bash
+   sync-repos --show-ids</code></p>
+<ol>
+<li><strong>View Repository Information:</strong></li>
+<li>The system will display a formatted table showing:<ul>
+<li>OP_ID (numeric identifier)</li>
+<li>Repository URL</li>
+<li>Branch name</li>
+<li>Local repository path</li>
+</ul>
+</li>
+<li>
+<p>No further input is required for this command</p>
+</li>
+<li>
+<p><strong>Using the Information:</strong></p>
+</li>
+<li>Note down any OP_IDs you need for other operations</li>
+<li>Press any key to return to the command prompt if prompted</li>
+</ol>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><code>sync-repos<span class="w"> </span>--show-ids
+
++-------+----------------------------------------+---------+--------------------------------+
+<span class="p">|</span><span class="w"> </span>OP_ID<span class="w"> </span><span class="p">|</span><span class="w">               </span>REPO<span class="w"> </span>URL<span class="w">                 </span><span class="p">|</span><span class="w"> </span>BRANCH<span class="w">  </span><span class="p">|</span><span class="w">              </span>PATH<span class="w">              </span><span class="p">|</span>
++-------+----------------------------------------+---------+--------------------------------+
+<span class="p">|</span><span class="w">   </span><span class="m">1</span><span class="w">   </span><span class="p">|</span><span class="w"> </span>https://github.com/user/repo1.git<span class="w">      </span><span class="p">|</span><span class="w"> </span>main<span class="w">    </span><span class="p">|</span><span class="w"> </span>/home/user/repositories/repo1<span class="w">  </span><span class="p">|</span>
+<span class="p">|</span><span class="w">   </span><span class="m">2</span><span class="w">   </span><span class="p">|</span><span class="w"> </span>https://github.com/user/repo2.git<span class="w">      </span><span class="p">|</span><span class="w"> </span>develop<span class="w"> </span><span class="p">|</span><span class="w"> </span>/home/user/repositories/repo2<span class="w">  </span><span class="p">|</span>
+<span class="p">|</span><span class="w">   </span><span class="m">3</span><span class="w">   </span><span class="p">|</span><span class="w"> </span>https://github.com/org/project.git<span class="w">     </span><span class="p">|</span><span class="w"> </span>feature<span class="w"> </span><span class="p">|</span><span class="w"> </span>/home/user/work/project<span class="w">        </span><span class="p">|</span>
++-------+----------------------------------------+---------+--------------------------------+
+</code></pre></div>
+
+<hr />
+<h4 id="3-rb-rollback-to-the-latest-backup">3. <code>--rb</code> - Rollback to the Latest Backup<a class="headerlink" href="#3-rb-rollback-to-the-latest-backup" title="Permanent link">&para;</a></h4>
+<p>Restores the destination directory to its most recent backup.</p>
+<p><strong>Detailed Steps:</strong>
+1. Run the following command:
+   <code>bash
+   sync-repos --rb</code></p>
+<ol>
+<li><strong>Backup Selection:</strong></li>
+<li>The system will display: "Searching for latest backup..."</li>
+<li>It will automatically locate the most recent backup file</li>
+<li>
+<p>You'll see: "Latest backup found: [backup filename]"</p>
+</li>
+<li>
+<p><strong>Confirmation:</strong></p>
+</li>
+<li>You will be prompted: "Do you want to restore from this backup? (yes/no)"</li>
+<li>
+<p>Enter <code>yes</code> to proceed or <code>no</code> to cancel the operation</p>
+</li>
+<li>
+<p><strong>Restoration Process:</strong></p>
+</li>
+<li>If you chose "yes":<ul>
+<li>The system will display: "Restoring from backup..."</li>
+<li>You'll see the extraction progress as files are restored</li>
+<li>Upon completion, you'll see: "Restoration completed successfully."</li>
+</ul>
+</li>
+<li>
+<p>If you chose "no":</p>
 <ul>
-<li><strong>Backup Regularly:</strong> While the tool creates backups, manually back up critical data beforehand.</li>
-<li><strong>Review Logs:</strong> Inspect <code>~/.sync-repos/logs/</code> after runs to verify success.</li>
-<li><strong>Stay Updated:</strong> Use the latest <code>sync-repos</code> version for improvements and fixes.</li>
+<li>The operation will be cancelled with a message: "Restoration cancelled."</li>
+</ul>
+</li>
+<li>
+<p><strong>Cleanup:</strong></p>
+</li>
+<li>The system will ask: "Do you want to delete the used backup file? (yes/no)"</li>
+<li>Enter <code>yes</code> to delete the backup file or <code>no</code> to keep it</li>
+<li>If you chose "yes", you'll see: "Backup file deleted."</li>
+</ol>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><code>sync-repos<span class="w"> </span>--rb
+
+Searching<span class="w"> </span><span class="k">for</span><span class="w"> </span>latest<span class="w"> </span>backup...
+Latest<span class="w"> </span>backup<span class="w"> </span>found:<span class="w"> </span>/home/user/backups/dest-repo-2023-11-28-143022.tar.gz
+
+Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>restore<span class="w"> </span>from<span class="w"> </span>this<span class="w"> </span>backup?<span class="w"> </span><span class="o">(</span>yes/no<span class="o">)</span>
+yes
+
+Restoring<span class="w"> </span>from<span class="w"> </span>backup...
+extracting:<span class="w"> </span>index.js
+extracting:<span class="w"> </span>src/utils.js
+extracting:<span class="w"> </span>README.md
+extracting:<span class="w"> </span>package.json
+Restoration<span class="w"> </span>completed<span class="w"> </span>successfully.
+
+Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>delete<span class="w"> </span>the<span class="w"> </span>used<span class="w"> </span>backup<span class="w"> </span>file?<span class="w"> </span><span class="o">(</span>yes/no<span class="o">)</span>
+yes
+
+Backup<span class="w"> </span>file<span class="w"> </span>deleted.
+</code></pre></div>
+
+<hr />
+<h4 id="4-edit-track-et-edit-the-repository-tracking-file">4. <code>--edit-track</code>, <code>-et</code> - Edit the Repository Tracking File<a class="headerlink" href="#4-edit-track-et-edit-the-repository-tracking-file" title="Permanent link">&para;</a></h4>
+<p>Allows you to edit the tracking file that stores information about repositories.</p>
+<p><strong>Detailed Steps:</strong>
+1. Run the following command:
+   <code>bash
+   sync-repos --edit-track</code></p>
+<ol>
+<li><strong>Repository List Display:</strong></li>
+<li>The system will display a table of all tracked repositories</li>
+<li>
+<p>You'll see OP_IDs, URLs, branches, and paths for all repositories</p>
+</li>
+<li>
+<p><strong>Repository Selection:</strong></p>
+</li>
+<li>You will be prompted: "Enter the OP_ID of the repository you want to edit:"</li>
+<li>
+<p>Enter the numeric OP_ID of your target repository</p>
+</li>
+<li>
+<p><strong>Field Selection:</strong></p>
+</li>
+<li>You will see: "Choose the field to update:"</li>
+<li>```<ol>
+<li>Repository URL</li>
+<li>Path</li>
+<li>Branch</li>
+<li>Operation ID
+ ```</li>
+</ol>
+</li>
+<li>
+<p>Enter the number corresponding to the field you want to edit</p>
+</li>
+<li>
+<p><strong>Value Update:</strong></p>
+</li>
+<li>Based on your field selection:<ul>
+<li>For Repository URL: "Enter new Repository URL:"</li>
+<li>For Path: "Enter new Path:"</li>
+<li>For Branch: "Enter new Branch:"</li>
+<li>For Operation ID: "Enter new Operation ID:"</li>
+</ul>
+</li>
+<li>
+<p>Enter the new value for the selected field</p>
+</li>
+<li>
+<p><strong>Confirmation:</strong></p>
+</li>
+<li>The system will display: "Repository tracking information updated successfully."</li>
+<li>
+<p>The updated repository information will be shown</p>
+</li>
+<li>
+<p><strong>Additional Edits:</strong></p>
+</li>
+<li>You will be asked: "Do you want to edit another repository? (yes/no)"</li>
+<li>Enter <code>yes</code> to edit another repository or <code>no</code> to finish</li>
+</ol>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><code>sync-repos<span class="w"> </span>--edit-track
+
++-------+----------------------------------------+---------+--------------------------------+
+<span class="p">|</span><span class="w"> </span>OP_ID<span class="w"> </span><span class="p">|</span><span class="w">               </span>REPO<span class="w"> </span>URL<span class="w">                 </span><span class="p">|</span><span class="w"> </span>BRANCH<span class="w">  </span><span class="p">|</span><span class="w">              </span>PATH<span class="w">              </span><span class="p">|</span>
++-------+----------------------------------------+---------+--------------------------------+
+<span class="p">|</span><span class="w">   </span><span class="m">1</span><span class="w">   </span><span class="p">|</span><span class="w"> </span>https://github.com/user/repo1.git<span class="w">      </span><span class="p">|</span><span class="w"> </span>main<span class="w">    </span><span class="p">|</span><span class="w"> </span>/home/user/repositories/repo1<span class="w">  </span><span class="p">|</span>
+<span class="p">|</span><span class="w">   </span><span class="m">2</span><span class="w">   </span><span class="p">|</span><span class="w"> </span>https://github.com/user/repo2.git<span class="w">      </span><span class="p">|</span><span class="w"> </span>develop<span class="w"> </span><span class="p">|</span><span class="w"> </span>/home/user/repositories/repo2<span class="w">  </span><span class="p">|</span>
+<span class="p">|</span><span class="w">   </span><span class="m">3</span><span class="w">   </span><span class="p">|</span><span class="w"> </span>https://github.com/org/project.git<span class="w">     </span><span class="p">|</span><span class="w"> </span>feature<span class="w"> </span><span class="p">|</span><span class="w"> </span>/home/user/work/project<span class="w">        </span><span class="p">|</span>
++-------+----------------------------------------+---------+--------------------------------+
+
+Enter<span class="w"> </span>the<span class="w"> </span>OP_ID<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>repository<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>edit:
+<span class="m">2</span>
+
+Repository<span class="w"> </span>Information:
+OP_ID:<span class="w"> </span><span class="m">2</span>
+Repository<span class="w"> </span>URL:<span class="w"> </span>https://github.com/user/repo2.git
+Branch:<span class="w"> </span>develop
+Path:<span class="w"> </span>/home/user/repositories/repo2
+
+Choose<span class="w"> </span>the<span class="w"> </span>field<span class="w"> </span>to<span class="w"> </span>update:
+<span class="m">1</span>.<span class="w"> </span>Repository<span class="w"> </span>URL
+<span class="m">2</span>.<span class="w"> </span>Path
+<span class="m">3</span>.<span class="w"> </span>Branch
+<span class="m">4</span>.<span class="w"> </span>Operation<span class="w"> </span>ID
+<span class="m">3</span>
+
+Enter<span class="w"> </span>new<span class="w"> </span>Branch:
+main
+
+Repository<span class="w"> </span>tracking<span class="w"> </span>information<span class="w"> </span>updated<span class="w"> </span>successfully.
+
+Updated<span class="w"> </span>Repository<span class="w"> </span>Information:
+OP_ID:<span class="w"> </span><span class="m">2</span>
+Repository<span class="w"> </span>URL:<span class="w"> </span>https://github.com/user/repo2.git
+Branch:<span class="w"> </span>main
+Path:<span class="w"> </span>/home/user/repositories/repo2
+
+Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>edit<span class="w"> </span>another<span class="w"> </span>repository?<span class="w"> </span><span class="o">(</span>yes/no<span class="o">)</span>
+no
+</code></pre></div>
+
+<hr />
+<h4 id="5-show-logs-display-logs">5. <code>--show-logs</code> - Display Logs<a class="headerlink" href="#5-show-logs-display-logs" title="Permanent link">&para;</a></h4>
+<p>Displays logs of previous operations in a structured format.</p>
+<p><strong>Detailed Steps:</strong>
+1. Run the following command:
+   <code>bash
+   sync-repos --show-logs</code></p>
+<ol>
+<li><strong>Date Selection:</strong></li>
+<li>The system will display: "Available log dates:"</li>
+<li>You'll see a list of dates with log entries, numbered sequentially:
+     <code>Available log dates:
+     1) 10_April
+     2) 11_April
+     3) 17_April
+     4) 18_April
+     Choose a date (1-4):</code></li>
+<li>
+<p>Enter the number corresponding to your chosen date</p>
+</li>
+<li>
+<p><strong>Log Selection:</strong></p>
+</li>
+<li>The system will display a list of log files for the selected date:
+     <code>Available logs for 10_April:
+     1) sync_20250410_123705.log.json
+     2) sync_20250410_123903.log.json
+     3) sync_20250410_124010.log.json
+     4) sync_20250410_124103.log.json
+     5) sync_20250410_124141.log.json
+     6) sync_20250410_124251.log.json</code></li>
+<li>
+<p>Enter the number corresponding to your chosen log file</p>
+</li>
+<li>
+<p><strong>Log Details:</strong></p>
+</li>
+<li>
+<p>The system will display the log contents in JSON format, showing detailed information about the operation:
+     <code>json
+     {
+       "logs": [
+         {
+           "timestamp": "2025-04-10T12:39:03+05:30",
+           "type": "info",
+           "message": "Tracking file not found. Creating a new one..."
+         },
+         {
+           "timestamp": "2025-04-10T12:39:03+05:30",
+           "type": "success",
+           "message": "Tracking file created at /home/openweb/.sync_repo/SYNC_DIR/repo_tracking.json"
+         },
+         {
+           "timestamp": "2025-04-10T12:39:03+05:30",
+           "type": "info",
+           "message": "Detected Git URL for source. Checking tracking file..."
+         },
+         {
+           "timestamp": "2025-04-10T12:39:03+05:30",
+           "type": "info",
+           "message": "Cloning source repository..."
+         },
+         {
+           "timestamp": "2025-04-10T12:39:22+05:30",
+           "type": "success",
+           "message": "source repository cloned to /home/openweb/.sync_repo/SYNC_DIR/2025_04_REPOS/10/source_DIR_iPDACw (branch: main)"
+         },
+         {
+           "timestamp": "2025-04-10T12:39:22+05:30",
+           "type": "info",
+           "message": "Detected Git URL for dest. Checking tracking file..."
+         }
+       ]
+     }</code></p>
+</li>
+<li>
+<p><strong>Navigation Options:</strong></p>
+</li>
+<li>After viewing the logs, you can press any key to return to the previous menu</li>
+<li>You can navigate back to select different log files or dates as needed</li>
+<li>Use Ctrl+C to exit the log viewer at any time</li>
+</ol>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><code>sync-repos<span class="w"> </span>--show-logs
+
+Available<span class="w"> </span>log<span class="w"> </span>dates:
+<span class="m">1</span><span class="o">)</span><span class="w"> </span>10_April
+<span class="m">2</span><span class="o">)</span><span class="w"> </span>11_April
+<span class="m">3</span><span class="o">)</span><span class="w"> </span>17_April
+<span class="m">4</span><span class="o">)</span><span class="w"> </span>18_April
+Choose<span class="w"> </span>a<span class="w"> </span>date<span class="w"> </span><span class="o">(</span><span class="m">1</span>-4<span class="o">)</span>:<span class="w"> </span><span class="m">1</span>
+
+Available<span class="w"> </span>logs<span class="w"> </span><span class="k">for</span><span class="w"> </span>10_April:
+<span class="m">1</span><span class="o">)</span><span class="w"> </span>sync_20250410_123705.log.json
+<span class="m">2</span><span class="o">)</span><span class="w"> </span>sync_20250410_123903.log.json
+<span class="m">3</span><span class="o">)</span><span class="w"> </span>sync_20250410_124010.log.json
+<span class="m">4</span><span class="o">)</span><span class="w"> </span>sync_20250410_124103.log.json
+<span class="m">5</span><span class="o">)</span><span class="w"> </span>sync_20250410_124141.log.json
+<span class="m">6</span><span class="o">)</span><span class="w"> </span>sync_20250410_124251.log.json
+Choose<span class="w"> </span>a<span class="w"> </span>log<span class="w"> </span><span class="o">(</span><span class="m">1</span>-6<span class="o">)</span>:<span class="w"> </span><span class="m">2</span>
+
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;logs&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">    </span><span class="o">{</span>
+<span class="w">      </span><span class="s2">&quot;timestamp&quot;</span>:<span class="w"> </span><span class="s2">&quot;2025-04-10T12:39:03+05:30&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;type&quot;</span>:<span class="w"> </span><span class="s2">&quot;info&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;Tracking file not found. Creating a new one...&quot;</span>
+<span class="w">    </span><span class="o">}</span>,
+<span class="w">    </span><span class="o">{</span>
+<span class="w">      </span><span class="s2">&quot;timestamp&quot;</span>:<span class="w"> </span><span class="s2">&quot;2025-04-10T12:39:03+05:30&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;type&quot;</span>:<span class="w"> </span><span class="s2">&quot;success&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;Tracking file created at /home/openweb/.sync_repo/SYNC_DIR/repo_tracking.json&quot;</span>
+<span class="w">    </span><span class="o">}</span>,
+<span class="w">    </span><span class="o">{</span>
+<span class="w">      </span><span class="s2">&quot;timestamp&quot;</span>:<span class="w"> </span><span class="s2">&quot;2025-04-10T12:39:03+05:30&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;type&quot;</span>:<span class="w"> </span><span class="s2">&quot;info&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;Detected Git URL for source. Checking tracking file...&quot;</span>
+<span class="w">    </span><span class="o">}</span>,
+<span class="w">    </span><span class="o">{</span>
+<span class="w">      </span><span class="s2">&quot;timestamp&quot;</span>:<span class="w"> </span><span class="s2">&quot;2025-04-10T12:39:03+05:30&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;type&quot;</span>:<span class="w"> </span><span class="s2">&quot;info&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;Cloning source repository...&quot;</span>
+<span class="w">    </span><span class="o">}</span>,
+<span class="w">    </span><span class="o">{</span>
+<span class="w">      </span><span class="s2">&quot;timestamp&quot;</span>:<span class="w"> </span><span class="s2">&quot;2025-04-10T12:39:22+05:30&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;type&quot;</span>:<span class="w"> </span><span class="s2">&quot;success&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;source repository cloned to /home/openweb/.sync_repo/SYNC_DIR/2025_04_REPOS/10/source_DIR_iPDACw (branch: main)&quot;</span>
+<span class="w">    </span><span class="o">}</span>,
+<span class="w">    </span><span class="o">{</span>
+<span class="w">      </span><span class="s2">&quot;timestamp&quot;</span>:<span class="w"> </span><span class="s2">&quot;2025-04-10T12:39:22+05:30&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;type&quot;</span>:<span class="w"> </span><span class="s2">&quot;info&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;Detected Git URL for dest. Checking tracking file...&quot;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>//<span class="w"> </span>More<span class="w"> </span>log<span class="w"> </span>entries...
+<span class="w">  </span><span class="o">]</span>
+<span class="o">}</span>
+
+Press<span class="w"> </span>Enter<span class="w"> </span>to<span class="w"> </span><span class="k">return</span><span class="w"> </span>to<span class="w"> </span>log<span class="w"> </span>selection...
+</code></pre></div>
+
+<hr />
+<h4 id="6-clear-backups-clear-the-backup-folder">6. <code>--clear-backups</code> - Clear the Backup Folder<a class="headerlink" href="#6-clear-backups-clear-the-backup-folder" title="Permanent link">&para;</a></h4>
+<p>Deletes all backups stored in the backup folder.</p>
+<p><strong>Detailed Steps:</strong>
+1. Run the following command:
+   <code>bash
+   sync-repos --clear-backups</code></p>
+<ol>
+<li><strong>Backup Summary:</strong></li>
+<li>The system will display: "Found [number] backup files in the backup folder."</li>
+<li>
+<p>You'll see the total size of the backup files: "Total size: [size] MB"</p>
+</li>
+<li>
+<p><strong>Confirmation:</strong></p>
+</li>
+<li>You will be prompted: "Are you sure you want to delete all backups? (yes/no)"</li>
+<li>
+<p>Enter <code>yes</code> to proceed with deletion or <code>no</code> to cancel</p>
+</li>
+<li>
+<p><strong>Deletion Process:</strong></p>
+</li>
+<li>If you chose "yes":<ul>
+<li>The system will display: "Deleting backups..."</li>
+<li>A progress indicator or list of files being deleted may be shown</li>
+<li>Upon completion, you'll see: "All backups have been deleted successfully."</li>
+</ul>
+</li>
+<li>If you chose "no":<ul>
+<li>The operation will be cancelled with a message: "Operation cancelled. Backups were not deleted."</li>
+</ul>
+</li>
+</ol>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><code>sync-repos<span class="w"> </span>--clear-backups
+
+Found<span class="w"> </span><span class="m">15</span><span class="w"> </span>backup<span class="w"> </span>files<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>backup<span class="w"> </span>folder.
+Total<span class="w"> </span>size:<span class="w"> </span><span class="m">450</span>.8<span class="w"> </span>MB
+
+Are<span class="w"> </span>you<span class="w"> </span>sure<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>delete<span class="w"> </span>all<span class="w"> </span>backups?<span class="w"> </span><span class="o">(</span>yes/no<span class="o">)</span>
+yes
+
+Deleting<span class="w"> </span>backups...
+Deleted:<span class="w"> </span>dest-repo-2023-11-28-143022.tar.gz
+Deleted:<span class="w"> </span>repo1-2023-11-27-101545.tar.gz
+Deleted:<span class="w"> </span>project-2023-11-25-092218.tar.gz
+...
+Deleted:<span class="w"> </span>repo2-2023-11-22-153012.tar.gz
+
+All<span class="w"> </span>backups<span class="w"> </span>have<span class="w"> </span>been<span class="w"> </span>deleted<span class="w"> </span>successfully.
+</code></pre></div>
+
+<hr />
+<h4 id="7-rlp-rollback-the-last-git-push">7. <code>--rlp</code> - Rollback the Last Git Push<a class="headerlink" href="#7-rlp-rollback-the-last-git-push" title="Permanent link">&para;</a></h4>
+<p>Reverts the last Git push in the destination repository.</p>
+<p><strong>Detailed Steps:</strong>
+1. Run the following command:
+   <code>bash
+   sync-repos --rlp</code></p>
+<ol>
+<li><strong>Repository Selection:</strong></li>
+<li>You will be prompted: "Enter the OP_ID of the repository to rollback:"</li>
+<li>
+<p>Enter the numeric OP_ID of the repository</p>
+</li>
+<li>
+<p><strong>Current Status Check:</strong></p>
+</li>
+<li>The system will display: "Checking current repository status..."</li>
+<li>
+<p>You'll see the current HEAD commit hash and message</p>
+</li>
+<li>
+<p><strong>Previous Commit Identification:</strong></p>
+</li>
+<li>The system will display: "Previous commit: [commit hash]"</li>
+<li>
+<p>You'll see the commit message and details</p>
+</li>
+<li>
+<p><strong>Confirmation:</strong></p>
+</li>
+<li>You will be prompted: "Are you sure you want to rollback to this commit? (yes/no)"</li>
+<li>
+<p>Enter <code>yes</code> to proceed with the rollback or <code>no</code> to cancel</p>
+</li>
+<li>
+<p><strong>Rollback Process:</strong></p>
+</li>
+<li>
+<p>If you chose "yes":</p>
+<ul>
+<li>The system will display: "Rolling back to previous commit..."</li>
+<li>You'll see Git output as the repository is reset</li>
+<li>You will be prompted: "Do you want to force push this rollback? (yes/no)"</li>
+</ul>
+<p><strong>If you choose "yes" to force push:</strong>
+ - The system will display: "Force pushing rollback..."
+ - You'll see Git output as changes are pushed
+ - Upon completion, you'll see: "Rollback has been successfully pushed."</p>
+<p><strong>If you choose "no" to force push:</strong>
+ - The operation will finish locally with a message: "Rollback completed locally but not pushed."</p>
+</li>
+<li>
+<p>If you chose "no" at the initial confirmation:</p>
+<ul>
+<li>The operation will be cancelled with a message: "Rollback cancelled."</li>
+</ul>
+</li>
+</ol>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><code>sync-repos<span class="w"> </span>--rlp
+
+Enter<span class="w"> </span>the<span class="w"> </span>OP_ID<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>repository<span class="w"> </span>to<span class="w"> </span>rollback:
+<span class="m">2</span>
+
+Checking<span class="w"> </span>current<span class="w"> </span>repository<span class="w"> </span>status...
+Current<span class="w"> </span>HEAD:<span class="w"> </span>8a2b3c4<span class="w"> </span>-<span class="w"> </span>Update<span class="w"> </span>utils<span class="w"> </span>and<span class="w"> </span>documentation
+
+Previous<span class="w"> </span>commit:<span class="w"> </span>a1b2c3d<span class="w"> </span>-<span class="w"> </span>Fix<span class="w"> </span>pagination<span class="w"> </span><span class="k">in</span><span class="w"> </span>API<span class="w"> </span>responses
+
+Are<span class="w"> </span>you<span class="w"> </span>sure<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>rollback<span class="w"> </span>to<span class="w"> </span>this<span class="w"> </span>commit?<span class="w"> </span><span class="o">(</span>yes/no<span class="o">)</span>
+yes
+
+Rolling<span class="w"> </span>back<span class="w"> </span>to<span class="w"> </span>previous<span class="w"> </span>commit...
+HEAD<span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span>at<span class="w"> </span>a1b2c3d<span class="w"> </span>Fix<span class="w"> </span>pagination<span class="w"> </span><span class="k">in</span><span class="w"> </span>API<span class="w"> </span>responses
+
+Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>force<span class="w"> </span>push<span class="w"> </span>this<span class="w"> </span>rollback?<span class="w"> </span><span class="o">(</span>yes/no<span class="o">)</span>
+yes
+
+Force<span class="w"> </span>pushing<span class="w"> </span>rollback...
+Total<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span>reused<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">0</span><span class="o">)</span>
+To<span class="w"> </span>https://github.com/user/repo2.git
+<span class="w"> </span>+<span class="w"> </span>8a2b3c4...a1b2c3d<span class="w"> </span>develop<span class="w"> </span>-&gt;<span class="w"> </span>develop<span class="w"> </span><span class="o">(</span>forced<span class="w"> </span>update<span class="o">)</span>
+
+Rollback<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>successfully<span class="w"> </span>pushed.
+</code></pre></div>
+
+<hr />
+<h4 id="8-rtc-rollback-to-a-specific-git-commit">8. <code>--rtc</code> - Rollback to a Specific Git Commit<a class="headerlink" href="#8-rtc-rollback-to-a-specific-git-commit" title="Permanent link">&para;</a></h4>
+<p>Rolls back the destination repository to a specific Git commit.</p>
+<p><strong>Detailed Steps:</strong>
+1. Run the following command:
+   <code>bash
+   sync-repos --rtc</code></p>
+<ol>
+<li><strong>Repository Selection:</strong></li>
+<li>You will be prompted: "Enter the OP_ID of the repository to rollback:"</li>
+<li>
+<p>Enter the numeric OP_ID of the repository</p>
+</li>
+<li>
+<p><strong>Commit History Display:</strong></p>
+</li>
+<li>The system will display: "Recent commits in this repository:"</li>
+<li>
+<p>You'll see a list of recent commits with hashes, dates, authors, and messages:
+     <code>8a2b3c4 (2023-11-28) - John Doe: Update utils and documentation
+     a1b2c3d (2023-11-27) - Jane Smith: Fix pagination in API responses
+     e5f6g7h (2023-11-25) - John Doe: Implement search functionality</code></p>
+</li>
+<li>
+<p><strong>Commit Selection:</strong></p>
+</li>
+<li>You will be prompted: "Enter the commit hash you want to rollback to:"</li>
+<li>
+<p>Enter the full or abbreviated commit hash (e.g., "a1b2c3d")</p>
+</li>
+<li>
+<p><strong>Target Commit Verification:</strong></p>
+</li>
+<li>The system will display: "Selected commit:"</li>
+<li>
+<p>You'll see details of the selected commit including hash, author, date, and message</p>
+</li>
+<li>
+<p><strong>Confirmation:</strong></p>
+</li>
+<li>You will be prompted: "Are you sure you want to rollback to this commit? (yes/no)"</li>
+<li>
+<p>Enter <code>yes</code> to proceed with the rollback or <code>no</code> to cancel</p>
+</li>
+<li>
+<p><strong>Rollback Process:</strong></p>
+</li>
+<li>
+<p>If you chose "yes":</p>
+<ul>
+<li>The system will display: "Rolling back to selected commit..."</li>
+<li>You'll see Git output as the repository is reset</li>
+<li>You will be prompted: "Do you want to force push this rollback? (yes/no)"</li>
+</ul>
+<p><strong>If you choose "yes" to force push:</strong>
+ - The system will display: "Force pushing rollback..."
+ - You'll see Git output as changes are pushed
+ - Upon completion, you'll see: "Rollback has been successfully pushed."</p>
+<p><strong>If you choose "no" to force push:</strong>
+ - The operation will finish locally with a message: "Rollback completed locally but not pushed."</p>
+</li>
+<li>
+<p>If you chose "no" at the initial confirmation:</p>
+<ul>
+<li>The operation will be cancelled with a message: "Rollback cancelled."</li>
+</ul>
+</li>
+</ol>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><code>sync-repos<span class="w"> </span>--rtc
+
+Enter<span class="w"> </span>the<span class="w"> </span>OP_ID<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>repository<span class="w"> </span>to<span class="w"> </span>rollback:
+<span class="m">2</span>
+
+Recent<span class="w"> </span>commits<span class="w"> </span><span class="k">in</span><span class="w"> </span>this<span class="w"> </span>repository:
+8a2b3c4<span class="w"> </span><span class="o">(</span><span class="m">2023</span>-11-28<span class="o">)</span><span class="w"> </span>-<span class="w"> </span>John<span class="w"> </span>Doe:<span class="w"> </span>Update<span class="w"> </span>utils<span class="w"> </span>and<span class="w"> </span>documentation
+a1b2c3d<span class="w"> </span><span class="o">(</span><span class="m">2023</span>-11-27<span class="o">)</span><span class="w"> </span>-<span class="w"> </span>Jane<span class="w"> </span>Smith:<span class="w"> </span>Fix<span class="w"> </span>pagination<span class="w"> </span><span class="k">in</span><span class="w"> </span>API<span class="w"> </span>responses
+e5f6g7h<span class="w"> </span><span class="o">(</span><span class="m">2023</span>-11-25<span class="o">)</span><span class="w"> </span>-<span class="w"> </span>John<span class="w"> </span>Doe:<span class="w"> </span>Implement<span class="w"> </span>search<span class="w"> </span>functionality
+i9j0k1l<span class="w"> </span><span class="o">(</span><span class="m">2023</span>-11-22<span class="o">)</span><span class="w"> </span>-<span class="w"> </span>Jane<span class="w"> </span>Smith:<span class="w"> </span>Add<span class="w"> </span>user<span class="w"> </span>authentication<span class="w"> </span>module
+m2n3o4p<span class="w"> </span><span class="o">(</span><span class="m">2023</span>-11-20<span class="o">)</span><span class="w"> </span>-<span class="w"> </span>John<span class="w"> </span>Doe:<span class="w"> </span>Initial<span class="w"> </span>project<span class="w"> </span>setup
+
+Enter<span class="w"> </span>the<span class="w"> </span>commit<span class="w"> </span><span class="nb">hash</span><span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>rollback<span class="w"> </span>to:
+e5f6g7h
+
+Selected<span class="w"> </span>commit:
+Commit:<span class="w"> </span>e5f6g7h
+Author:<span class="w"> </span>John<span class="w"> </span>Doe<span class="w"> </span>&lt;john.doe@example.com&gt;
+Date:<span class="w"> </span>Sat<span class="w"> </span>Nov<span class="w"> </span><span class="m">25</span><span class="w"> </span><span class="m">14</span>:23:45<span class="w"> </span><span class="m">2023</span><span class="w"> </span>+0100
+Message:<span class="w"> </span>Implement<span class="w"> </span>search<span class="w"> </span>functionality
+
+Are<span class="w"> </span>you<span class="w"> </span>sure<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>rollback<span class="w"> </span>to<span class="w"> </span>this<span class="w"> </span>commit?<span class="w"> </span><span class="o">(</span>yes/no<span class="o">)</span>
+yes
+
+Rolling<span class="w"> </span>back<span class="w"> </span>to<span class="w"> </span>selected<span class="w"> </span>commit...
+HEAD<span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span>at<span class="w"> </span>e5f6g7h<span class="w"> </span>Implement<span class="w"> </span>search<span class="w"> </span>functionality
+
+Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>force<span class="w"> </span>push<span class="w"> </span>this<span class="w"> </span>rollback?<span class="w"> </span><span class="o">(</span>yes/no<span class="o">)</span>
+yes
+
+Force<span class="w"> </span>pushing<span class="w"> </span>rollback...
+Total<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span>reused<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">0</span><span class="o">)</span>
+To<span class="w"> </span>https://github.com/user/repo2.git
+<span class="w"> </span>+<span class="w"> </span>8a2b3c4...e5f6g7h<span class="w"> </span>develop<span class="w"> </span>-&gt;<span class="w"> </span>develop<span class="w"> </span><span class="o">(</span>forced<span class="w"> </span>update<span class="o">)</span>
+
+Rollback<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>successfully<span class="w"> </span>pushed.
+</code></pre></div>
+
+<hr />
+<h2 id="additional-notes">Additional Notes<a class="headerlink" href="#additional-notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Backup Creation:</strong> Before performing any synchronization, the tool automatically creates a backup of the destination directory.</li>
+<li><strong>Git Operations:</strong> After synchronization, you can optionally perform Git operations like adding changes, committing, and pushing to the remote repository.</li>
+<li><strong>Tracking File:</strong> The tool maintains a JSON-based tracking file to store repository information. This file is essential for operations like editing tracking details or showing operation IDs.</li>
 </ul>
 <hr />
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<p>Refer to the Troubleshooting section for common issues. For further assistance, contact <a href="mailto:supratimneogi007@bitbucket.org">supratimneogi007@bitbucket.org</a>.</p>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Ensure you have the required dependencies installed: <code>git</code>, <code>rsync</code>, <code>tar</code>, and <code>jq</code>.</li>
+<li>Clone the tool or copy it to your desired location.</li>
+<li>Run the tool with the appropriate option as described above.</li>
+</ol>
+<p>For any issues or questions, refer to the logs using the <code>--show-logs</code> option or contact your system administrator.</p>
 <hr />
-<p>This guide equips your team with a professional, detailed reference to leverage <code>sync-repos</code> effectively, complete with examples and best practices for a seamless experience.</p>
 
 
 
